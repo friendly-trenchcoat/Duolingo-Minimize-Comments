@@ -3,7 +3,7 @@
 // @description  Adds button for each comment which can hide and unhide it and its children
 // @author       friendly-trenchcoat
 // @version      1.0
-// @match        https://www.duolingo.com/skill*
+// @include      https://www.duolingo.com/*
 // @require	     http://code.jquery.com/jquery-latest.min.js
 // @grant        none
 // ==/UserScript==
@@ -24,7 +24,7 @@ setInterval(function() { // check every second
 function min(){
     $("li[class='discussion-comments-list-item']").each(function(k,v) {  // for each comment
         var cNum = v.id.match(/comment-(.*)/)[1];  // find comment id number
-        newButton(cNum, v);
+        newButton(cNum, v); // make a button
     });
 }
 function newButton(cNum, comment){
